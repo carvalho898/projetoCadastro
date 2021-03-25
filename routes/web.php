@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/formulario','\App\Http\Controllers\cadastroController@formulario')->name('carregarFormulario');
+Route::POST('/carregar-formulario', '\App\Http\Controllers\cadastroController@Cadastro')->name('carregarCadastro');
