@@ -10,24 +10,30 @@
         <center> <h2>Informações</h2></center>
         <div class="container">
           
-            <form>
+            <form method="POST" action="{{ route('carregarUsuario') }}">
+              @csrf
               <center>
             <div class="form-group">
               <label for="exampleInputEmail1">Nome Completo</label>
-              <input type="string" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""><br>
-              <small id="emailHelp" class="form-text text-muted"></small>
+              <input type="string" class="form-control" id="nomeInput" name="nome" ><br>
+             
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Data de Nascimento</label>
-                <input type="string" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""><br>
-                <small id="emailHelp" class="form-text text-muted"></small>
+                <input type="date" class="form-control" id="dataInput" name="data"><br>
+               
               </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Senha</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+              <input type="password" class="form-control" id="senhaInput" name="senha"><br>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Matrícula</label>
+              <input type="number" class="form-control" id="matriculaInput" name="matricula">
             </div>
          
             <button type="submit" class="btn btn-primary">Enviar</button>
+            
           </center>
           </form>
           </div>

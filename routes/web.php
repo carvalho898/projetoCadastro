@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/formulario','\App\Http\Controllers\cadastroController@formulario')->name('carregarFormulario');
-Route::POST('/carregar-formulario', '\App\Http\Controllers\cadastroController@Cadastro')->name('carregarCadastro');
+Route::get('/listauser','\App\Http\Controllers\cadastroController@listauser')->name('carregarTabela');
+Route::POST('/mostrar-dados','\App\Http\Controllers\cadastroController@dados')->name('carregarUsuario');
