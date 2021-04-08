@@ -7,32 +7,33 @@
         <title> Formulario </title>
     </head>
     <body>
-        <center> <h2>Informações</h2></center>
+        <center> <h2>EDITAR USUARIO</h2></center>
         <div class="container">
           
-            <form method="POST" action="{{ route('carregarUsuario') }}">
+            <form method="POST" action="{{ route('salvarEdicao') }}">
               @csrf
+              <Input type="hidden" name="id" value="{{$usuario->id}}">
               <center>
             <div class="form-group">
               <label for="exampleInputEmail1">Nome Completo</label>
-              <input type="string" class="form-control" id="nomeInput" name="nome" ><br>
+              <input type="string" class="form-control" id="nomeInput" name="nome" value ="{{$usuario->nome}}" ><br>
              
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Data de Nascimento</label>
-                <input type="date" class="form-control" id="dataInput" name="data_nascimento"><br>
+                <input type="date" class="form-control" id="dataInput" name="data_nascimento" value ="{{$usuario->data_nascimento}}" ><br>
                
               </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Senha</label>
-              <input type="password" class="form-control" id="senhaInput" name="senha"><br>
+              <input type="password" class="form-control" id="senhaInput" name="senha" value ="{{$usuario->senha}}"> <br>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Matrícula</label>
-              <input type="number" class="form-control" id="matriculaInput" name="matricula">
+              <input type="number" class="form-control" id="matriculaInput" name="matricula" value = "{{$usuario->matricula}}">
             </div>
          
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
             
           </center>
           </form>
